@@ -46,6 +46,7 @@ module.exports = function (wallaby) {
 
   return {
     files: [
+      {pattern: 'wallabyTest.ts', load: false},
       {pattern: 'apps/**/*.+(ts|css|less|scss|sass|styl|html|json|svg)', load: false},
       {pattern: 'apps/**/*.d.ts', ignore: true},
       {pattern: 'apps/**/*spec.ts', ignore: true},
@@ -56,7 +57,9 @@ module.exports = function (wallaby) {
 
     tests: [
       {pattern: 'apps/**/*spec.ts', load: false},
-      {pattern: 'libs/**/*spec.ts', load: false}
+      {pattern: 'libs/**/*spec.ts', load: false},
+      {pattern: 'apps/**/e2e/**', ignore: true},
+      {pattern: 'libs/**/e2e/**', ignore: true}
     ],
 
     testFramework: 'jasmine',
